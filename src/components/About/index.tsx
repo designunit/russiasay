@@ -2,8 +2,9 @@ import { Section } from "../Section"
 import { Ratio } from "../Ratio"
 import Link from "next/link"
 import s from './index.module.css'
+import ScrollTrigger from 'react-scroll-trigger'
 
-export const About: React.FC = () => {
+export const About: React.FC<any> = ({ setMenuIsBlue }) => {
     return (
         <Section
             className={s.section}
@@ -76,6 +77,16 @@ export const About: React.FC = () => {
                         {' '} ©2020
                     </p>
                 )}
+            />
+            {/* @ts-ignore */}
+            <ScrollTrigger
+                style={{
+                    position: 'absolute',
+                    bottom: '8%',
+                }}
+                onEnter={() => setMenuIsBlue(true)}
+                onProgress={() => setMenuIsBlue(true)}
+                onExit={() => setMenuIsBlue(false)}
             />
         </Section>
     )
