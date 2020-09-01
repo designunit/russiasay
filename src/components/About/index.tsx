@@ -45,11 +45,13 @@ export const About: React.FC = () => {
                     </>
                 )}
             />
-            <button
-                className={s.button}
-            >
-                карта идей
-            </button>
+            <Link href={'https://app.latl.ng/map/73RM6E47C2C3K5RT'}>
+                <button
+                    className={s.button}
+                >
+                    карта идей
+                </button>
+            </Link>
             <Ratio
                 style={{
                     marginTop: '2rem',
