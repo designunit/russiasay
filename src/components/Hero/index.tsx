@@ -23,7 +23,7 @@ export const Hero: React.FC<IHeroPorops> = ({ buttons, setModalContent }) => {
                 <h2
                     className={s.h2}
                 >
-                    Независимый социальный проект
+                    Социальный проект
                 </h2>
                 <CCC />
                 <div
