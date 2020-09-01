@@ -64,14 +64,14 @@ export const About: React.FC = () => {
                 rightContent={(
                     <p>
                         разработано в студии {' '}
-                        <Link href='#' >
-                            <a
-                                style={{
-                                    textDecoration: 'underline',
-                                }}
+                        <Link 
+                            href='https://unit4.io'
+                        >
+                            <span
+                                className={s.linkUnit}
                             >
                                 design::unit
-                            </a>
+                            </span>
                         </Link>
                         {' '} ©2020
                     </p>

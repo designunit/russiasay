@@ -3,6 +3,7 @@ import { CCC } from "../CCC"
 import s from './index.module.css'
 import { useMobile } from "../../hooks/useMobile"
 import { buttonsType, modalContentType } from "../../pages"
+import Link from "next/link"
 
 interface IHeroPorops {
     buttons: buttonsType
@@ -29,14 +30,26 @@ export const Hero: React.FC<IHeroPorops> = ({ buttons, setModalContent }) => {
                     className={s.menu}
                 >
                     {!isMobile && (
-                        buttons.map(({ text, content }, index) => (
-                            <span
-                                key={index}
-                                className={s.button}
-                                onClick={() => setModalContent(content)}
-                            >
-                                {text}
-                            </span>
+                        buttons.map(({ text, content, href }, index) => (
+                            href ? (
+                                <Link
+                                    href={href}
+                                >
+                                    <span
+                                        className={s.button}
+                                    >
+                                        {text}
+                                    </span>
+                                </Link>
+                            ) : (
+                                <span
+                                    key={index}
+                                    className={s.button}
+                                    onClick={() => setModalContent(content)}
+                                >
+                                    {text}
+                                </span>
+                            )
                         ))
                     )}
                 </div>

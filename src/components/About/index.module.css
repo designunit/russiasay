@@ -38,3 +38,8 @@
    box-shadow: 0px 4px 24px var(--color-blue);
    cursor: pointer;
 }
+
+.linkUnit {
+    text-decoration: underline;
+    cursor: pointer;
+}

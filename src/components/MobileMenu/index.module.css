@@ -1,0 +1,10 @@
+.button {
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: end;
+    text-decoration: underline;
+    color: white;
+
+    margin-bottom: 2rem;
+}
