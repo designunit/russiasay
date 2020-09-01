@@ -1,36 +1,46 @@
 import { Section } from "../Section"
-import { Ratio } from "../Ratio"
-import s from './styles.module.css'
+import { CCC } from "../CCC"
+import s from './index.module.css'
+import { useMobile } from "../../hooks/useMobile"
+import { buttonsType, modalContentType } from "../../pages"
 
-export const Hero: React.FC = () => {
+interface IHeroPorops {
+    buttons: buttonsType
+    setModalContent: (content: modalContentType) => void
+}
 
-   return (
-      <>
-         <Ratio
-            style={{
-               display: 'flex',
-               width: '100%',
-               justifyContent: 'center',
-            }}
-            left={'0 0 50%'}
-            right={'0 0 50%'}
-            leftContent={(
-               <h1
-                  className={s.h1}
-               >
-                  СКАЖИ<br />СВОЕ<br />СЛОВО!
-               </h1>
-            )}
-            rightContent={(
-               <img
-                  src='/static/hero.svg'
-                  style={{
-                     height: '100%',
-                     width: '100%',
-                  }}
-               />
-            )}
-         />
-      </>
-   )
+export const Hero: React.FC<IHeroPorops> = ({ buttons, setModalContent }) => {
+    const isMobile = useMobile()
+
+    return (
+        <span
+            className={`${s.animatedBg} ${s.container}`}
+        >
+            <Section
+                className={s.section}
+            >
+                <h2
+                    className={s.h2}
+                >
+                    Независимый социальный проект
+                </h2>
+                <CCC />
+                <div
+                    className={s.menu}
+                >
+                    {!isMobile && (
+                        buttons.map(({ text, content }, index) => (
+                            <span
+                                key={index}
+                                className={s.button}
+                                onClick={() => setModalContent(content)}
+                            >
+                                {text}
+                            </span>
+                        ))
+                    )}
+                </div>
+            </Section>
+        </span>
+    )
 }

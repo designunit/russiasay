@@ -1,0 +1,17 @@
+.h1 {
+   font-family: var(--font-family-hero);
+
+   letter-spacing: .05em;
+   text-transform: uppercase;
+   line-height: 80.6%;
+   margin: 0;
+
+   color: white;
+
+   display: flex;
+   flex-direction: column;
+}
+.image {
+   height: 100%;
+   width: 100%;
+}

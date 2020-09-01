@@ -1,0 +1,40 @@
+.section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-image: url(/static/map.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    padding-bottom: 3%;
+}
+
+.button {   
+   width: 470px;
+   max-width: 100%;
+   align-self: center;
+   padding: 25px;
+   background-color: var(--color-blue);
+   border: none;
+   border-radius: 10px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+   font-weight: bold;
+   letter-spacing: .25em;
+   text-transform: uppercase;
+
+   color: white;
+
+   transition: all .25s;
+}
+
+.button:hover {
+   background-color: var(--color-lightblue);
+   color: var(--color-blue);
+   box-shadow: 0px 4px 24px var(--color-blue);
+   cursor: pointer;
+}

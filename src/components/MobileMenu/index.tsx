@@ -1,42 +1,38 @@
 import { slide as Menu } from 'react-burger-menu'
+import { useState } from 'react'
+import { Cross } from '../Cross'
+import { Burger } from '../Burger'
+import { buttonsType, modalContentType } from '../../pages'
 
-export const MobileMenu: React.FC = () => {
+interface IMobileMenuProps {
+   isBlue: boolean
+   buttons: buttonsType
+   setModalContent: (content: modalContentType) => void
+}
 
-   const buttons = [
-      {
-         text: 'почта',
-         link: '',
-      },
-      {
-         text: 'о проекте',
-         link: '',
-      },
-      {
-         text: 'карта идей',
-         link: '',
-      },
-      {
-         text: 'вопросы',
-         link: '',
-      },
-   ]
+export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setModalContent }) => {
+   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
    return (
       <Menu
+         isOpen={menuIsOpen}
+         onStateChange={state => setMenuIsOpen(state.isOpen)}
          customBurgerIcon={(
-            <img
-               src='/static/menu.svg'
+            <Burger
+                styles={{
+                    fill: isBlue ? '#00C2FF' : 'white',
+                    transition: 'fill .5s'
+                }}
             />
          )}
          customCrossIcon={(
-            <img
-               src='/static/cross.svg'
-            />
+            <Cross />
          )}
          right
          width='100%'
+         disableAutoFocus
       >
-         {buttons.map(({ text, link }, index) => (
+         {buttons.map(({ text, content }, index) => (
             <div
                key={index}
                style={{
@@ -44,9 +40,14 @@ export const MobileMenu: React.FC = () => {
                   textTransform: 'uppercase',
                   fontWeight: 'bold',
                   textAlign: 'end',
+                  textDecoration: 'underline',
                   color: 'white',
 
                   marginBottom: '2rem',
+               }}
+               onClick={() => {
+                  setModalContent(content)
+                  setMenuIsOpen(false)
                }}
             >
                {text}
