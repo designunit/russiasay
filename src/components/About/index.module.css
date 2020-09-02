@@ -39,6 +39,12 @@
    cursor: pointer;
 }
 
+.textUnit {
+    color:white;
+    background-color: black;
+    padding: .05rem .5rem;
+}
+
 .linkUnit {
     text-decoration: underline;
     cursor: pointer;
