@@ -20,11 +20,7 @@ export const Hero: React.FC<IHeroPorops> = ({ buttons, setModalContent }) => {
             <Section
                 className={s.section}
             >
-                <h2
-                    className={s.h2}
-                >
-                    Социальный проект
-                </h2>
+                <div />
                 <CCC />
                 <div
                     className={s.menu}
