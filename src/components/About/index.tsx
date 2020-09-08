@@ -95,7 +95,7 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                                 <span
                                     className={s.linkUnit}
                                 >
-                                    design::unit
+                                    design::unit4
                                 </span>
                             </Link>
                             {' '} ©2020

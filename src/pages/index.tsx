@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Layout } from '../components/Layout'
 import { useMobile } from '../hooks/useMobile'
 import { Modal } from '../components/Modal'
+import { Contacts } from '../components/Contacts'
 
 export type modalContentType = JSX.Element | null
 export type buttonsType = {
@@ -24,7 +25,7 @@ const Index: NextPage = () => {
         },
         {
             text: 'контакты',
-            content: <>РАНЬШЕ ЭТО БЫЛА КНОПКА С КАРТОЙ</>,
+            content: <Contacts />,
         },
         {
             text: 'вопросы',

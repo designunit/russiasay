@@ -35,6 +35,7 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
                     padding: '24px',
                     border: '1px solid #00C2FF',
 
+                    maxWidth: '500px',
                     display: 'flex',
                     flexDirection: 'column',
                 }
