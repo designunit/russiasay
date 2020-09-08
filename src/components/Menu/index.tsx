@@ -20,7 +20,7 @@ export const Menu: React.FC<IMenuProps> = ({ buttons, setModalContent }) => {
                     <span
                         key={index}
                         className={s.button}
-                        onClick={() => setModalContent(content)}
+                        onClick={() => setModalContent({ text, content })}
                     >
                         {text}
                     </span>

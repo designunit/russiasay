@@ -4,8 +4,8 @@ import { modalContentType } from '../../pages'
 import { Cross } from '../Cross'
 
 interface IModalProps {
-    modalContent: modalContentType
-    setModalContent: (state: modalContentType) => void
+    modalContent: modalContentType | null
+    setModalContent: (state: modalContentType | null) => void
 }
 
 ReactModal.setAppElement('.root')
@@ -43,17 +43,24 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
             className='string to drop default styles'
             onRequestClose={() => setModalContent(null)}
         >
-            <button
-                className={s.closeButton}
-                onClick={() => setModalContent(null)}
+            <span
+                className={s.top}
             >
-                <Cross
-                    styles={{
-                        fill: '#00C2FF',
-                    }}
-                />
-            </button>
-            {modalContent}
+                <span>
+                    {modalContent?.text}
+                </span>
+                <button
+                    className={s.closeButton}
+                    onClick={() => setModalContent(null)}
+                >
+                    <Cross
+                        styles={{
+                            fill: '#00C2FF',
+                        }}
+                    />
+                </button>
+            </span>
+            {modalContent?.content}
         </ReactModal>
     )
 }

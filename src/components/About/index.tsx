@@ -5,6 +5,7 @@ import s from './index.module.css'
 import ScrollTrigger from 'react-scroll-trigger'
 import { Menu } from "../Menu"
 import { modalContentType, buttonsType } from "../../pages"
+import { useMobile } from "../../hooks/useMobile"
 
 interface IAboutProps {
     buttons: buttonsType
@@ -13,6 +14,8 @@ interface IAboutProps {
 }
 
 export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenuIsBlue }) => {
+    const isMobile = useMobile()
+    
     return (
         <Section
             className={s.section}
@@ -27,7 +30,7 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                                 marginBottom: '1rem',
                             }}
                         >
-                            Проект создан на базе студии проектирования городской среды <span className={s.textUnit}>design::unit4</span> для того, чтобы оперативно собирать общественное мнение жителей об устройстве городских территорий.  
+                            Проект создан на базе студии проектирования городской среды <span className={s.textUnit}>design : : unit4</span> для того, чтобы оперативно собирать общественное мнение жителей об устройстве городских территорий.  
                         </p>
                         <p
                             style={{
@@ -46,7 +49,7 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                         </p>
                         <p
                             style={{
-                                marginBottom: '1rem',
+                                margin: 0,
                             }}
                         >
                             Найдите на карте свой город, улицу или дом. 
@@ -54,12 +57,19 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                             Укажите точку на карте. 
                             Напишите свой комментарий во всплывающем окне. 
                         </p>
+                        <p
+                            style={{
+                                margin: 0,
+                            }}
+                        >
+                            Вам Слово...
+                        </p>
                     </>
                 )}
             />
             <Link href={'https://app.latl.ng/map/73RM6E47C2C3K5RT'}>
                 <button
-                    className={s.button}
+                    className={`${s.button} ${isMobile && s.butonMobile}`}
                 >
                     <span
                         className={s.butonText}

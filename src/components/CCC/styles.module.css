@@ -5,7 +5,7 @@
    text-transform: uppercase;
    line-height: 80.6%;
    margin: 0;
-   margin-bottom: 2rem;
+   margin-bottom: 1rem;
 
    color: white;
 
@@ -21,7 +21,7 @@
     margin: 0;
     margin-bottom: 1rem;
     
-    font-size: calc(min(1rem + 2.5vmin, 45px));
+    font-size: calc(min(1rem + 2vmin, 45px));
     font-weight: bold;
     letter-spacing: .5rem;
     text-transform: uppercase;

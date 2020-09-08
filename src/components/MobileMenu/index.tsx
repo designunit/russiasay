@@ -39,7 +39,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setMod
                     key={index}
                     className={s.button}
                     onClick={() => {
-                        setModalContent(content)
+                        setModalContent({ text, content })
                         setMenuIsOpen(false)
                     }}
                 >

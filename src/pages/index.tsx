@@ -7,16 +7,17 @@ import { useMobile } from '../hooks/useMobile'
 import { Modal } from '../components/Modal'
 import { Contacts } from '../components/Contacts'
 
-export type modalContentType = JSX.Element | null
-export type buttonsType = {
+export type modalContentType = {
     text: string
-    content: modalContentType
-}[]
+    content: JSX.Element | null
+}
+
+export type buttonsType = modalContentType[]
 
 const Index: NextPage = () => {
     const isMobile = useMobile()
     const [menuIsBlue, setMenuIsBlue] = useState(false)
-    const [modalContent, setModalContent] = useState<modalContentType>(null)
+    const [modalContent, setModalContent] = useState<modalContentType | null>(null)
 
     const buttons: buttonsType = [
         {

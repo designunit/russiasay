@@ -14,11 +14,6 @@ export const CCC: React.FC = () => {
                 right={'0 0 50%'}
                 leftContent={(
                     <>
-                        <h2
-                            className={s.h2}
-                        >
-                            Социальный проект
-                        </h2>
                         <h1
                             className={s.h1}
                             style={{
@@ -36,6 +31,11 @@ export const CCC: React.FC = () => {
                                 СЛОВО!
                             </span>
                         </h1>
+                        <h2
+                            className={s.h2}
+                        >
+                            Социальный проект
+                        </h2>
                     </>
                 )}
                 rightContent={(

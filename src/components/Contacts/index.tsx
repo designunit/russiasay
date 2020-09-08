@@ -32,7 +32,7 @@ export const Contacts: React.FC = () => (
                 href='https://unit4.io'
             >
                 <a>
-                    design::unit4
+                    design : : unit4
                 </a>
             </Link>
         </p>

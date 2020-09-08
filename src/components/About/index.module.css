@@ -16,8 +16,8 @@
 
 .button {
    width: 100%;
-   max-width: 400px;
-   align-self: center;
+   max-width: 300px;
+   align-self: flex-end;
    margin-top: 10%;
    background-color: transparent;
    border: solid 12px var(--color-blue);
@@ -44,6 +44,10 @@
    cursor: pointer;
 }
 
+.butonMobile {
+    align-self: center;
+}
+
 .butonText {
     position: absolute;
     width: 100%;
@@ -54,7 +58,7 @@
     justify-content: center;
 
    font-family: var(--font-family);
-   font-size: 1.75rem;
+   font-size: 1.5rem;
    font-weight: bold;
    letter-spacing: .25em;
    text-transform: uppercase;
@@ -64,6 +68,7 @@
     color:white;
     background-color: black;
     padding: .05rem .5rem;
+    white-space: nowrap;
 }
 
 .credits {
