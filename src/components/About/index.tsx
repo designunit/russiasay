@@ -3,8 +3,16 @@ import { Ratio } from "../Ratio"
 import Link from "next/link"
 import s from './index.module.css'
 import ScrollTrigger from 'react-scroll-trigger'
+import { Menu } from "../Menu"
+import { modalContentType, buttonsType } from "../../pages"
 
-export const About: React.FC<any> = ({ setMenuIsBlue }) => {
+interface IAboutProps {
+    buttons: buttonsType
+    setModalContent: (content: modalContentType) => void
+    setMenuIsBlue: (IsBlue: boolean) => void
+}
+
+export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenuIsBlue }) => {
     return (
         <Section
             className={s.section}
@@ -19,9 +27,14 @@ export const About: React.FC<any> = ({ setMenuIsBlue }) => {
                                 marginBottom: '1rem',
                             }}
                         >
-                            Проект создан на базе студии проектирования городской среды <span className={s.textUnit}>design::unit4</span> для того чтобы оперативно собирать общественное мнение жителей об устройстве городских территорий. 
-                            Изначально мы осуществляли проекты в конкретных городах России: Урай, Краснокамск, Питкяранта и др. 
-                            Активность общественности превзошла все наши ожидания и мы решили расширить проект. 
+                            Проект создан на базе студии проектирования городской среды <span className={s.textUnit}>design::unit4</span> для того, чтобы оперативно собирать общественное мнение жителей об устройстве городских территорий.  
+                        </p>
+                        <p
+                            style={{
+                                marginBottom: '1rem',
+                            }}
+                        >
+                            Мы уже осуществили проекты в городах России: Урай, Краснокамск, Питкяранта и др. Активность общественности превзошла все наши ожидания и мы решили расширить географию проекта.
                         </p>
                         <p
                             style={{
@@ -36,17 +49,10 @@ export const About: React.FC<any> = ({ setMenuIsBlue }) => {
                                 marginBottom: '1rem',
                             }}
                         >
-                            Найдите на карте свой город, улицу и даже дом.
-                            Выберете категорию: идея, ценность или проблема. 
-                            Укажите точку на карте и напишите свой комментарий во всплывающем окне.
-                        </p>
-                        <p
-                            style={{
-                                marginBottom: '1rem',
-                                fontWeight: 'bold',
-                            }}
-                        >
-                            Ждем предложений.
+                            Найдите на карте свой город, улицу или дом. 
+                            Выберите категорию- Идея, Ценность или Проблема.
+                            Укажите точку на карте. 
+                            Напишите свой комментарий во всплывающем окне. 
                         </p>
                     </>
                 )}
@@ -55,7 +61,11 @@ export const About: React.FC<any> = ({ setMenuIsBlue }) => {
                 <button
                     className={s.button}
                 >
-                    карта идей
+                    <span
+                        className={s.butonText}
+                    >
+                        Вам Слово...
+                    </span>
                 </button>
             </Link>
             <Ratio
@@ -67,27 +77,37 @@ export const About: React.FC<any> = ({ setMenuIsBlue }) => {
                 }}
                 left={5}
                 right={5}
+                leftContent={(
+                    <Menu
+                        buttons={buttons}
+                        setModalContent={setModalContent}
+                    />
+                )}
                 rightContent={(
-                    <p>
-                        разработано в студии {' '}
-                        <Link 
-                            href='https://unit4.io'
-                        >
-                            <span
-                                className={s.linkUnit}
+                    <div 
+                        className={s.credits}
+                    >
+                        <p>
+                            разработано в студии {' '}
+                            <Link 
+                                href='https://unit4.io'
                             >
-                                design::unit
-                            </span>
-                        </Link>
-                        {' '} ©2020
-                    </p>
+                                <span
+                                    className={s.linkUnit}
+                                >
+                                    design::unit
+                                </span>
+                            </Link>
+                            {' '} ©2020
+                        </p>
+                    </div>
                 )}
             />
             {/* @ts-ignore */}
             <ScrollTrigger
                 style={{
                     position: 'absolute',
-                    bottom: '8%',
+                    top: '95vh',
                 }}
                 onEnter={() => setMenuIsBlue(true)}
                 onProgress={() => setMenuIsBlue(true)}

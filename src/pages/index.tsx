@@ -10,7 +10,6 @@ export type modalContentType = JSX.Element | null
 export type buttonsType = {
     text: string
     content: modalContentType
-    href?: string
 }[]
 
 const Index: NextPage = () => {
@@ -24,9 +23,8 @@ const Index: NextPage = () => {
             content: <>ТЫ НАЖАЛ "О ПРОЕКТЕ"</>,
         },
         {
-            text: 'карта идей',
-            content: null,
-            href: 'https://app.latl.ng/map/73RM6E47C2C3K5RT'
+            text: 'контакты',
+            content: <>РАНЬШЕ ЭТО БЫЛА КНОПКА С КАРТОЙ</>,
         },
         {
             text: 'вопросы',

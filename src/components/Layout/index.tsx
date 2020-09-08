@@ -15,12 +15,11 @@ export const Layout: React.FC<ILayoutProps> = ({ buttons, setModalContent, setMe
         <main
             className={s.main}
         >
-            <Hero
-                buttons={buttons}
-                setModalContent={setModalContent}
-            />
+            <Hero />
             <About
                 setMenuIsBlue={setMenuIsBlue}
+                buttons={buttons}
+                setModalContent={setModalContent}
             />
         </main>
     )

@@ -1,13 +1,7 @@
 import { Ratio } from "../Ratio"
 import s from './styles.module.css'
-import { useRef } from "react"
-import { useMobile } from "../../hooks/useMobile"
 
 export const CCC: React.FC = () => {
-
-    const ref = useRef(null)
-    const isMobile = useMobile()
-
     return (
         <>
             <Ratio
@@ -26,11 +20,10 @@ export const CCC: React.FC = () => {
                             Социальный проект
                         </h2>
                         <h1
-                            ref={ref}
                             className={s.h1}
                             style={{
                                 // @ts-ignore
-                                fontSize: `${Math.min(ref.current?.clientWidth / 5, 135)}px`,
+                                fontSize: 'calc(min(2rem + 9vmin, 135px))'
                             }}
                         >
                             <span>

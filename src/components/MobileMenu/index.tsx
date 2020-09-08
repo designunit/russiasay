@@ -34,7 +34,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setMod
             width='100%'
             disableAutoFocus
         >
-            {buttons.map(({ text, content, href }, index) => (
+            {buttons.map(({ text, content }, index) => (
                 <div
                     key={index}
                     className={s.button}
@@ -43,13 +43,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setMod
                         setMenuIsOpen(false)
                     }}
                 >
-                    {href ? (
-                        <Link
-                            href={href}
-                        >
-                            {text}
-                        </Link>
-                    ) : text}
+                    {text}
                 </div>
             ))}
         </Menu>
