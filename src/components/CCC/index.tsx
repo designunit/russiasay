@@ -1,11 +1,7 @@
 import { Ratio } from "../Ratio"
 import s from './styles.module.css'
-import { useRef } from "react"
 
 export const CCC: React.FC = () => {
-    const refH1 = useRef<HTMLHeadingElement>(null)
-    const refLeft = useRef<HTMLDivElement>(null)
-
     return (
         <>
             <Ratio
@@ -15,49 +11,31 @@ export const CCC: React.FC = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
-                left={'0 0 50%'}
-                right={'0 0 50%'}
+                left={'0 0 49%'}
+                right={'0 0 49%'}
+                spacer={'0 0 2%'}
                 leftContent={(
-                    <div
-                        ref={refLeft}
-                        style={{
-                            height: '100%',
-                        }}
-                    >
+                    <>
+                        <img
+                            src='/static/heroText.svg'
+                            className={s.image}
+                        />
                         <h1
                             className={s.h1}
-                            ref={refH1}
                         >
-                            <span>
-                                СКАЖИ
-                            </span>
-                            <span>
-                                СВОЕ
-                            </span>
-                            <span>
-                                СЛОВО!
-                            </span>
+                            Скажи свое слово!
                         </h1>
                         <h2
                             className={s.h2}
                         >
                             Социальный проект
                         </h2>
-                        <img
-                            style={{
-                                width: refH1.current?.clientWidth ?? '100%',
-                            }}
-                            src='/static/h2.svg'
-                        />
-                    </div>
+                    </>
                 )}
                 rightContent={(
                     <img
                         src='/static/hero.svg'
                         className={s.image}
-                        style={{
-                            height: refLeft.current?.clientHeight ?? '100%',
-                        }}
                     />
                 )}
             />
