@@ -4,7 +4,6 @@ import { Cross } from '../Cross'
 import { Burger } from '../Burger'
 import { buttonsType, modalContentType } from '../../pages'
 import s from './index.module.css'
-import Link from 'next/link'
 
 interface IMobileMenuProps {
     isBlue: boolean

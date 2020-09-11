@@ -1,7 +1,6 @@
 import s from './index.module.css'
 import { buttonsType, modalContentType } from "../../pages"
 import { useMobile } from '../../hooks/useMobile'
-import Link from 'next/link'
 
 interface IMenuProps {
     buttons: buttonsType
