@@ -79,11 +79,11 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                 <button
                     className={`${s.button} ${isMobile && s.butonMobile}`}
                 >
-                    <span
+                    <a
                         className={s.butonText}
                     >
                         Вам Слово...
-                    </span>
+                    </a>
                 </button>
             </Link>
             <Ratio
