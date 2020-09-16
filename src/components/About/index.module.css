@@ -7,18 +7,20 @@
     justify-content: space-between;
 
     background-image: url(/static/map.svg);
-    background-position: bottom;
+    background-position: top;
+    background-position-y: min(-220px, -50%);
     background-repeat: no-repeat;
     background-size: contain;
 
     padding-bottom: 3%;
+    padding-top: 1%;
 }
 
 .button {
    width: 100%;
    max-width: 300px;
    align-self: flex-end;
-   margin-top: 10%;
+   margin-top: 20px;
    background-color: transparent;
    border: solid 12px var(--color-blue);
    border-radius: 50%;
@@ -28,7 +30,7 @@
 
    transition: all .25s;
    position: relative;
-   align-self: center;
+   align-self: flex-end;
 }
 
 .button::after {

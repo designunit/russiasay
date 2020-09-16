@@ -28,16 +28,12 @@ const Index: NextPage = () => {
             text: 'контакты',
             content: <Contacts />,
         },
-        {
-            text: 'вопросы',
-            content: <>ТЫ НАЖАЛ "ВОПРОСЫ"</>,
-        },
     ]
 
     return (
         <div className='root'>
             <Head>
-                <title>скажи.рф</title>
+                <title>скажи-всем.рф</title>
             </Head>
             <Modal
                 modalContent={modalContent}
