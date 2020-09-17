@@ -34,7 +34,7 @@ export const CCC: React.FC = () => {
                 )}
                 rightContent={(
                     <img
-                        src='/static/hero.webp'
+                        src='/static/hero.png'
                         className={s.image}
                     />
                 )}
