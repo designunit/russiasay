@@ -6,6 +6,7 @@ import { Layout } from '../components/Layout'
 import { useMobile } from '../hooks/useMobile'
 import { Modal } from '../components/Modal'
 import { Contacts } from '../components/Contacts'
+import { YaMetrika } from '../components/YaMetrika'
 
 export type modalContentType = {
     text: string
@@ -34,6 +35,7 @@ const Index: NextPage = () => {
         <div className='root'>
             <Head>
                 <title>скажи-всем.рф</title>
+                <YaMetrika />
             </Head>
             <Modal
                 modalContent={modalContent}
