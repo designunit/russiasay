@@ -7,6 +7,7 @@ import { useMobile } from '../hooks/useMobile'
 import { Modal } from '../components/Modal'
 import { Contacts } from '../components/Contacts'
 import { YaMetrika } from '../components/YaMetrika'
+import { AboutText } from '../components/AboutText'
 
 export type modalContentType = {
     text: string
@@ -23,7 +24,7 @@ const Index: NextPage = () => {
     const buttons: buttonsType = [
         {
             text: 'о проекте',
-            content: <>ТЫ НАЖАЛ "О ПРОЕКТЕ"</>,
+            content: <AboutText />,
         },
         {
             text: 'контакты',
