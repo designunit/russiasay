@@ -23,10 +23,11 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    padding: '24px',
                 },
                 content: {
                     zIndex: 1001, // above mobile menu
-                    position: 'absolute',
+                    position: 'relative',
                     background: '#fff',
                     overflow: 'auto',
                     WebkitOverflowScrolling: 'touch',
@@ -36,6 +37,7 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
                     border: '1px solid #00C2FF',
 
                     maxWidth: '500px',
+                    maxHeight: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                 }
