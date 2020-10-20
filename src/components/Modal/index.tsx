@@ -45,12 +45,12 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
             className='string to drop default styles'
             onRequestClose={() => setModalContent(null)}
         >
-            <span
+            <div
                 className={s.top}
             >
-                <span>
+                <div>
                     {modalContent?.text}
-                </span>
+                </div>
                 <button
                     className={s.closeButton}
                     onClick={() => setModalContent(null)}
@@ -61,7 +61,7 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
                         }}
                     />
                 </button>
-            </span>
+            </div>
             {modalContent?.content}
         </ReactModal>
     )
