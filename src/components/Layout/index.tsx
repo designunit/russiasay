@@ -6,10 +6,9 @@ import { buttonsType, modalContentType } from "../../pages"
 interface ILayoutProps {
     buttons: buttonsType
     setModalContent: (state: modalContentType) => void
-    setMenuIsBlue: (state: boolean) => void
 }
 
-export const Layout: React.FC<ILayoutProps> = ({ buttons, setModalContent, setMenuIsBlue }) => {
+export const Layout: React.FC<ILayoutProps> = ({ buttons, setModalContent }) => {
 
     return (
         <main
@@ -17,7 +16,6 @@ export const Layout: React.FC<ILayoutProps> = ({ buttons, setModalContent, setMe
         >
             <Hero />
             <About
-                setMenuIsBlue={setMenuIsBlue}
                 buttons={buttons}
                 setModalContent={setModalContent}
             />

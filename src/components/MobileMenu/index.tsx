@@ -6,12 +6,11 @@ import { buttonsType, modalContentType } from '../../pages'
 import s from './index.module.css'
 
 interface IMobileMenuProps {
-    isBlue: boolean
     buttons: buttonsType
     setModalContent: (content: modalContentType) => void
 }
 
-export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setModalContent }) => {
+export const MobileMenu: React.FC<IMobileMenuProps> = ({ buttons, setModalContent }) => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
     return (
@@ -21,7 +20,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isBlue, buttons, setMod
             customBurgerIcon={(
                 <Burger
                     styles={{
-                        fill: isBlue ? '#00C2FF' : 'white',
+                        fill: '#00C2FF',
                         transition: 'fill .5s'
                     }}
                 />

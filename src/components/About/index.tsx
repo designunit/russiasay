@@ -2,7 +2,6 @@ import { Section } from "../Section"
 import { Ratio } from "../Ratio"
 import Link from "next/link"
 import s from './index.module.css'
-import ScrollTrigger from 'react-scroll-trigger'
 import { Menu } from "../Menu"
 import { modalContentType, buttonsType } from "../../pages"
 import { useMobile } from "../../hooks/useMobile"
@@ -10,10 +9,9 @@ import { useMobile } from "../../hooks/useMobile"
 interface IAboutProps {
     buttons: buttonsType
     setModalContent: (content: modalContentType) => void
-    setMenuIsBlue: (IsBlue: boolean) => void
 }
 
-export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenuIsBlue }) => {
+export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
     const isMobile = useMobile()
     
     return (
@@ -125,16 +123,6 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent, setMenu
                         </p>
                     </div>
                 )}
-            />
-            {/* @ts-ignore */}
-            <ScrollTrigger
-                style={{
-                    position: 'absolute',
-                    top: '95vh',
-                }}
-                onEnter={() => setMenuIsBlue(true)}
-                onProgress={() => setMenuIsBlue(true)}
-                onExit={() => setMenuIsBlue(false)}
             />
         </Section>
     )

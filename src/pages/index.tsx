@@ -18,7 +18,6 @@ export type buttonsType = modalContentType[]
 
 const Index: NextPage = () => {
     const isMobile = useMobile()
-    const [menuIsBlue, setMenuIsBlue] = useState(false)
     const [modalContent, setModalContent] = useState<modalContentType | null>(null)
 
     const buttons: buttonsType = [
@@ -44,7 +43,6 @@ const Index: NextPage = () => {
             />
             {isMobile && (
                 <MobileMenu
-                    isBlue={menuIsBlue}
                     buttons={buttons}
                     setModalContent={setModalContent}
                 />
@@ -52,7 +50,6 @@ const Index: NextPage = () => {
             <Layout
                 buttons={buttons}
                 setModalContent={setModalContent}
-                setMenuIsBlue={setMenuIsBlue}
             />
         </div>
     )
