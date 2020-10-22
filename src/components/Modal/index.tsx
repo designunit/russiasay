@@ -45,22 +45,24 @@ export const Modal: React.FC<IModalProps> = ({ modalContent, setModalContent }) 
             className='string to drop default styles'
             onRequestClose={() => setModalContent(null)}
         >
-            <div
-                className={s.top}
-            >
-                <div>
-                    {modalContent?.text}
-                </div>
-                <button
-                    className={s.closeButton}
-                    onClick={() => setModalContent(null)}
+            <div>
+                <div
+                    className={s.top}
                 >
-                    <Cross
-                        styles={{
-                            fill: '#00C2FF',
-                        }}
-                    />
-                </button>
+                    <div>
+                        {modalContent?.text}
+                    </div>
+                    <button
+                        className={s.closeButton}
+                        onClick={() => setModalContent(null)}
+                    >
+                        <Cross
+                            styles={{
+                                fill: '#00C2FF',
+                            }}
+                        />
+                    </button>
+                </div>
             </div>
             {modalContent?.content}
         </ReactModal>
