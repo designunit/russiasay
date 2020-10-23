@@ -33,15 +33,22 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ buttons, setModalConten
             disableAutoFocus
         >
             {buttons.map(({ text, content }, index) => (
-                <div
-                    key={index}
-                    className={s.button}
-                    onClick={() => {
-                        setModalContent({ text, content })
-                        setMenuIsOpen(false)
-                    }}
-                >
-                    {text}
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'flex-end'
+                }}>
+                    <div
+                        key={index}
+                        className={s.button}
+                        onClick={() => {
+                            if (typeof text === 'string') {
+                                setModalContent({ text, content })
+                            }
+                            setMenuIsOpen(false)
+                        }}
+                    >
+                        {text}
+                    </div>
                 </div>
             ))}
         </Menu>
