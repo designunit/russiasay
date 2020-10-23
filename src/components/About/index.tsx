@@ -85,7 +85,9 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
                     <a
                         className={s.butonText}
                     >
-                        Вам Слово...
+                        Скажи<br />
+                        Свое<br />
+                        Слово!
                     </a>
                 </button>
             </Link>
