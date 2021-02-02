@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    
+
     background-image: url(/static/map.svg);
     background-position: center top;
     background-repeat: no-repeat;
@@ -26,21 +26,21 @@
 }
 
 .button {
-   width: 100%;
-   max-width: 300px;
-   align-self: flex-end;
-   margin-top: 20px;
-   background-color: transparent;
-   border: solid 12px var(--color-blue);
-   border-radius: 50%;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 300px;
+    align-self: flex-end;
+    margin-top: 20px;
+    background-color: transparent;
+    border: solid 12px var(--color-blue);
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-   color: var(--color-blue);
-   text-align: start;
+    color: var(--color-blue);
+    text-align: start;
 
-   transition: all .25s;
-   position: relative;
-   align-self: flex-end;
+    transition: all 0.25s;
+    position: relative;
+    align-self: flex-end;
 }
 
 .button::after {
@@ -50,28 +50,27 @@
 }
 
 .button:hover {
-   background-color: var(--color-blue);
-   box-shadow: 0px 4px 24px var(--color-blue);
-   border-width: 0px;
-   color: white;
-   cursor: pointer;
+    background-color: var(--color-blue);
+    box-shadow: 0px 4px 24px var(--color-blue);
+    color: white;
+    cursor: pointer;
 }
 
 .butonText {
     position: absolute;
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-   font-family: var(--font-family);
-   font-size: 1.5rem;
-   font-weight: bold;
-   letter-spacing: .25em;
-   text-transform: uppercase;
-   text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .credits {
@@ -83,9 +82,9 @@
 
 .linkUnit {
     cursor: pointer;
-    color:white;
+    color: white;
     background-color: black;
-    padding: .05rem .5rem;
+    padding: 0.05rem 0.5rem;
     white-space: nowrap;
 }
 

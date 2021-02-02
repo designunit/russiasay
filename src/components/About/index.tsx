@@ -1,10 +1,10 @@
-import { Section } from "../Section"
-import { Ratio } from "../Ratio"
-import Link from "next/link"
+import { Section } from '../Section'
+import { Ratio } from '../Ratio'
+import Link from 'next/link'
 import s from './index.module.css'
-import { Menu } from "../Menu"
-import { modalContentType, buttonsType } from "../../pages"
-import { useMobile } from "../../hooks/useMobile"
+import { Menu } from '../Menu'
+import { modalContentType, buttonsType } from '../../pages'
+import { useMobile } from '../../hooks/useMobile'
 
 interface IAboutProps {
     buttons: buttonsType
@@ -13,37 +13,36 @@ interface IAboutProps {
 
 export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
     const isMobile = useMobile()
-    
+
     return (
-        <Section
-            className={s.section}
-        >
+        <Section className={s.section}>
             <Ratio
-                left={7}
+                left={6}
                 right={3}
-                leftContent={(
+                spacer={1}
+                leftContent={
                     <>
                         <p
                             style={{
                                 marginBottom: '1rem',
                             }}
                         >
-                            Проект создан на базе студии проектирования городской среды{' '}
-                            <Link
-                                href='https://unit4.io'
-                            >
-                                <a>
-                                    design : : unit4
-                                </a>
-                            </Link>
-                            {' '}для оперативного опроса жителей и сбора общественного мнения об устройстве городских территорий.
+                            Проект создан на базе студии проектирования
+                            городской среды{' '}
+                            <Link href='https://unit4.io'>
+                                <a>design : : unit4</a>
+                            </Link>{' '}
+                            для оперативного опроса жителей и сбора
+                            общественного мнения об устройстве городских
+                            территорий.
                         </p>
                         <p
                             style={{
                                 margin: 0,
                             }}
                         >
-                            Мы уже применили проект в некоторых городах России: Урай, Краснокамск, Питкяранта и др.
+                            Мы уже применили проект в некоторых городах России:
+                            Урай, Краснокамск, Питкяранта и др.
                         </p>
                         <p
                             style={{
@@ -51,7 +50,8 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
                                 marginBottom: '1rem',
                             }}
                         >
-                            Активность общественности превзошла все наши ожидания и мы решили расширить географию проекта.
+                            Активность общественности превзошла все наши
+                            ожидания и мы решили расширить географию проекта.
                         </p>
                         <p
                             style={{
@@ -66,7 +66,10 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
                                 margin: 0,
                             }}
                         >
-                            Найдите на карте свой город, улицу или дом. Выберите категорию: Идея, Ценность или Проблема. Укажите точку на карте. Напишите свой комментарий во всплывающем окне.
+                            Найдите на карте свой город, улицу или дом. Выберите
+                            категорию: Идея, Ценность или Проблема. Укажите
+                            точку на карте. Напишите свой комментарий во
+                            всплывающем окне.
                         </p>
                         <p
                             style={{
@@ -76,21 +79,28 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
                             Вам Слово...
                         </p>
                     </>
-                )}
+                }
+                rightContent={
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}>
+                    <Link href={'https://app.latl.ng/map/73RM6E47C2C3K5RT'}>
+                        <button
+                            className={`${s.button} ${
+                                isMobile && s.butonMobile
+                            }`}
+                        >
+                            <a className={s.butonText}>
+                                Перейти
+                                <br />
+                                на карту
+                            </a>
+                        </button>
+                    </Link>
+                    </div>
+                }
             />
-            <Link href={'https://app.latl.ng/map/73RM6E47C2C3K5RT'}>
-                <button
-                    className={`${s.button} ${isMobile && s.butonMobile}`}
-                >
-                    <a
-                        className={s.butonText}
-                    >
-                        Скажи<br />
-                        Свое<br />
-                        Слово!
-                    </a>
-                </button>
-            </Link>
             <Ratio
                 style={{
                     marginTop: '2rem',
@@ -100,31 +110,22 @@ export const About: React.FC<IAboutProps> = ({ buttons, setModalContent }) => {
                 }}
                 left={5}
                 right={5}
-                leftContent={(
-                    <Menu
-                        buttons={buttons}
-                        setModalContent={setModalContent}
-                    />
-                )}
-                rightContent={(
-                    <div 
-                        className={s.credits}
-                    >
+                leftContent={
+                    <Menu buttons={buttons} setModalContent={setModalContent} />
+                }
+                rightContent={
+                    <div className={s.credits}>
                         <p>
-                            разработано в студии {' '}
-                            <Link 
-                                href='https://unit4.io'
-                            >
-                                <span
-                                    className={s.linkUnit}
-                                >
+                            разработано в студии{' '}
+                            <Link href='https://unit4.io'>
+                                <span className={s.linkUnit}>
                                     design::unit4
                                 </span>
-                            </Link>
-                            {' '} ©2020
+                            </Link>{' '}
+                            ©2020
                         </p>
                     </div>
-                )}
+                }
             />
         </Section>
     )
